@@ -1,1 +1,58 @@
-<!doctype html><html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PocnitoriiIeftine — Crăciun</title><link rel="stylesheet" href="style.css"></head><body><div class="snow">❄ ❄ ❄ ❄ ❄ ❄ ❄</div><header><div class="logo">🎄 <span>Pocnitorii</span>Ieftine</div><nav><a href="#produse">Produse</a><a href="#despre">Despre</a><button onclick="openCart()">🛒 Coș <b id="count">0</b></button></nav></header><section class="hero"><div><p class="badge">🎅 EDIȚIE DE CRĂCIUN</p><h1>Sărbători cu<br><span>multă atmosferă</span></h1><p class="sub">Magazin demo cu tematică de Crăciun pentru produse de petrecere și decorațiuni non-pirotehnice.</p><a class="cta" href="#produse">Vezi produsele →</a></div><div class="ornament">🎁</div></section><section id="produse" class="products"><h2>Produse de sezon</h2><div class="grid"><article class="card"><div class="pic">🎉</div><h3>Confetti Party</h3><p>Confetti pentru petreceri, fără pirotehnice.</p><strong>19,99 lei</strong><button onclick="add('Confetti Party',19.99)">Adaugă în coș</button></article><article class="card"><div class="pic">🎈</div><h3>Baloane festive</h3><p>Set decorativ pentru petrecerea de Anul Nou.</p><strong>24,99 lei</strong><button onclick="add('Baloane festive',24.99)">Adaugă în coș</button></article><article class="card"><div class="pic">🎄</div><h3>Set decor Crăciun</h3><p>Decorațiuni roșii, verzi și aurii.</p><strong>39,99 lei</strong><button onclick="add('Set decor Crăciun',39.99)">Adaugă în coș</button></article></div></section><section id="despre" class="about"><h2>PocnitoriiIeftine</h2><p>Concept de magazin cu design festiv. Catalogul poate fi adaptat pentru produse permise legal.</p></section><div id="cart" class="cart"><div class="cartbox"><button class="close" onclick="closeCart()">×</button><h2>Coșul tău</h2><div id="items"></div><div class="total">Total: <span id="total">0,00</span> lei</div><button class="checkout" onclick="alert('Checkout demo — nicio plată nu este procesată.')">Continuă comanda</button></div></div><footer>© 2026 PocnitoriiIeftine · Magazin demo</footer><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="PocnitoriiIeftine — magazin demo de sezon pentru produse festive non-pirotehnice.">
+  <title>PocnitoriiIeftine | Ediție de Crăciun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">🎄 EDIȚIE DE SĂRBĂTORI <span>•</span> Livrare rapidă pentru produsele festive</div>
+  <header class="header">
+    <a class="logo" href="#top" aria-label="PocnitoriiIeftine acasă"><span>✦</span><strong>Pocnitorii</strong><em>Ieftine</em></a>
+    <nav class="nav" id="nav"><a href="#produse">Produse</a><a href="#avantaje">De ce noi</a><a href="#despre">Despre</a></nav>
+    <button class="cart-btn" onclick="openCart()" aria-label="Deschide coșul">Coș <span id="count">0</span></button>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Meniu">☰</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> Sărbătorile încep aici</div>
+        <h1>Crăciunul tău.<br><i>Mai festiv.</i></h1>
+        <p>Descoperă decorațiuni și accesorii de petrecere pentru seri memorabile, într-o colecție de sezon cu vibe de sărbătoare.</p>
+        <div class="hero-actions"><a class="btn primary" href="#produse">Descoperă colecția <b>→</b></a><a class="text-link" href="#despre">Află mai multe</a></div>
+        <div class="trust"><span>✓</span> Produse non-pirotehnice <span>✓</span> Comandă demo <span>✓</span> Design premium</div>
+      </div>
+      <div class="hero-art"><div class="halo"></div><div class="tree">🎄</div><div class="gift gift-a">🎁</div><div class="gift gift-b">🎁</div><div class="star">✦</div></div>
+    </section>
+
+    <section class="featured" id="avantaje">
+      <div><span class="mini-icon">✦</span><div><b>Colecție de sezon</b><small>Produse pentru atmosfera de Crăciun</small></div></div>
+      <div><span class="mini-icon">✓</span><div><b>Comandă simplă</b><small>Adaugi produsele direct în coș</small></div></div>
+      <div><span class="mini-icon">★</span><div><b>Design modern</b><small>Optimizat pentru telefon și PC</small></div></div>
+    </section>
+
+    <section class="products" id="produse">
+      <div class="section-head"><div><span class="eyebrow">COLECȚIA 2026</span><h2>Preferatele sezonului</h2></div><a href="#produse">Vezi toate <span>→</span></a></div>
+      <div class="grid">
+        <article class="card"><div class="product-art red">🎉<span class="tag">POPULAR</span></div><div class="card-body"><div class="rating">★★★★★ <small>4.9</small></div><h3>Confetti Party</h3><p>Confetti pentru petreceri și momente festive.</p><div class="card-bottom"><strong>19,99 <small>lei</small></strong><button onclick="add('Confetti Party',19.99)">Adaugă <span>+</span></button></div></div></article>
+        <article class="card"><div class="product-art green">🎈<span class="tag">FESTIV</span></div><div class="card-body"><div class="rating">★★★★★ <small>4.8</small></div><h3>Baloane festive</h3><p>Set decorativ pentru petreceri de sărbători.</p><div class="card-bottom"><strong>24,99 <small>lei</small></strong><button onclick="add('Baloane festive',24.99)">Adaugă <span>+</span></button></div></div></article>
+        <article class="card"><div class="product-art gold">🎄<span class="tag">BESTSELLER</span></div><div class="card-body"><div class="rating">★★★★★ <small>5.0</small></div><h3>Set decor Crăciun</h3><p>Decorațiuni roșii, verzi și aurii pentru casă.</p><div class="card-bottom"><strong>39,99 <small>lei</small></strong><button onclick="add('Set decor Crăciun',39.99)">Adaugă <span>+</span></button></div></div></article>
+      </div>
+    </section>
+
+    <section class="story" id="despre"><div class="story-art">🎄<span>2026</span></div><div><span class="eyebrow">POCNITORII IEFTINE</span><h2>Un magazin făcut pentru atmosfera de sărbătoare.</h2><p>Acesta este un concept de magazin online. Catalogul demo este construit pentru produse festive non-pirotehnice și poate fi adaptat ulterior pentru articole permise legal.</p><a class="btn light" href="#produse">Vezi colecția →</a></div></section>
+
+    <section class="newsletter"><div><span class="eyebrow">RĂMÂI APROAPE</span><h2>Noutăți de sezon, într-un singur loc.</h2></div><form onsubmit="event.preventDefault(); alert('Mulțumim! Acesta este un formular demo.');"><input type="email" placeholder="Adresa ta de email" required><button>Abonează-mă →</button></form></section>
+  </main>
+
+  <footer><div class="footer-top"><a class="logo footer-logo" href="#top"><span>✦</span><strong>Pocnitorii</strong><em>Ieftine</em></a><p>Magazin demo • Produse festive non-pirotehnice</p><div class="social">IG &nbsp; FB &nbsp; TT</div></div><div class="footer-bottom"><span>© 2026 PocnitoriiIeftine</span><span>Site demonstrativ • Fără plăți reale</span></div></footer>
+
+  <div id="cart" class="cart" onclick="if(event.target===this)closeCart()"><aside class="cartbox"><button class="close" onclick="closeCart()" aria-label="Închide">×</button><div class="cart-title"><span>COȘUL TĂU</span><h2>Comanda ta</h2></div><div id="items"></div><div class="cart-summary"><span>Total</span><strong><span id="total">0,00</span> lei</strong></div><button class="checkout" onclick="alert('Checkout demo — nicio plată nu este procesată.')">Continuă comanda <span>→</span></button><small class="safe">🔒 Checkout demonstrativ. Nu se procesează plăți.</small></aside></div>
+  <script src="script.js"></script>
+</body>
+</html>
